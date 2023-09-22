@@ -1,0 +1,158 @@
+#task 1
+a = int(input())
+b = int(input())
+if a < B :
+    print(a)
+else :
+    print(b)
+
+#task 2
+x = int(input())
+if x > 0:
+    print(1)
+elif x < 0:
+    print(-1)
+else:
+    print(0)
+
+#task 3
+a = int(input())
+b = int(input())
+c = int(input())
+d = int(input())
+
+first = 0
+second = 0
+if(a % 2 == 0 and b % 2 == 0):
+    first = 1
+elif(a % 2 == 1 and b % 2 == 1):
+    first = 1
+else:
+    first=0
+    
+if(c % 2 == 0 and d % 2 == 0):
+    second = 1
+elif(c % 2 == 1 and d % 2 == 1):
+    second = 1
+else:
+    second = 0
+    
+if(first == second):
+    print("YES")
+else:
+    print("NO")
+
+#task 4
+a = int(input())
+if ( a % 400 == 0) and (a % 100 == 0):
+    print("YES")
+elif (a % 4 == 0) and (a % 100 !=0):
+    print("YES")
+else:
+    print("NO")
+
+#task 5
+a = int(input())
+b = int(input())
+c = int(input())
+if (a > c) and (b > c):
+    print(c)
+elif (c > b) and (a > b):
+    print(b)
+else:
+    print(a)
+
+#task 6
+a = int(input())
+b = int(input())
+c = int(input())
+if (a == b ==c):
+    print(3)
+elif(a == b or a == c or b == c):
+    print(2)
+else:
+    print(0)
+
+#task 7
+a = int(input())
+b = int(input())
+c = int(input())
+d = int(input())
+if(a == c and b!= d):
+    print("YES")
+elif(b == d and a!= c):
+    print("YES")
+else:
+    print("NO")
+
+#task 8
+a = int(input())
+b = int(input())
+c = int(input())
+d = int(input())
+if(a == c and (b == d+1 or b == d-1)):
+    print("YES")
+elif(b == d and (a == c+1 or a == c-1)):
+    print("YES")
+elif((a == c+1 or a == c-1) and (b == d+1 or b == d-1)):
+    print("YES")
+else:
+    print("NO")
+
+
+#task 9
+a = int(input())
+b = int(input())
+c = int(input())
+d = int(input())
+if(a + b == c + d or a - b == c-d):
+    print("YES")
+else:
+    print("NO")
+
+#task 10
+a = int(input())
+b = int(input())
+c = int(input())
+d = int(input())
+if(a == c and (b>d or b<d)) :
+    print("YES")
+elif(b == d and (a>c or a<c)) :
+    print("YES")
+elif(a+b == c + d or a-b == c-d):
+    print("YES")
+else:
+    print("NO")
+
+#task 11
+a = int(input())
+b = int(input())
+c = int(input())
+d = int(input())
+if((c == a +1 or c==a-1) and (d == b+2 or d == b-2)):
+    print("YES")
+elif((c==a+2 or c==a-2) and (d==b+1 or d==b-1)):
+    print("YES")
+else:
+    print("NO")
+
+#task 12
+m = int(input())
+n = int(input())
+k = int(input())
+if(k<(n*m) and ((k % n == 0) or (k % m == 0))):
+    print("YES")
+else:
+    print("NO")
+
+#task 13
+n = int(input())
+m = int(input())
+x = int(input())
+y = int(input())
+if(m < n):
+    n, m = m ,n
+xmin = min(x, n-x)
+ymin = min(y, m-y)
+print(min(xmin, ymin))
+
