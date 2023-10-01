@@ -1,0 +1,134 @@
+#task 1
+elements = input().split()
+elements = [int(element) for element in elements]
+
+for i in range(0, len(elements), 2) :
+    print(elements[i])
+
+#task 2
+a = [int(x) for x in input().split()]
+for element in a:
+    if element % 2 == 0:
+        print(element, end = ' ')
+
+    
+#task 3
+a = [int(i) for i in input().split()]
+for i in range(1, len(a)):
+    if a[i] > a[i - 1]:
+        print(a[i])
+
+#task 4
+a = [int(i) for i in input().split()]
+for i in range(1, len(a)):
+    if a[i-1] * a[i] > 0:
+        print(a[i-1], a[i])
+        break
+
+#task 5
+a = [int(i) for i in input().split()]
+counter = 0
+for i in range(1, len(a) - 1):
+    if a[i - 1] < a[i] > a[i + 1]:
+        counter += 1
+print(counter)
+
+#task 6
+index_of_max = 0
+a = [int(i) for i in input().split()]
+for i in range(1, len(a)):
+    if a[i] > a[index_of_max]:
+        index_of_max = i
+print(a[index_of_max], index_of_max)
+
+#task 7
+a = [int(i) for i in input().split()]
+x = int(input())
+pos = 0
+while pos < len(a) and a[pos] >= x:
+    pos += 1
+print(pos + 1)
+
+#task 8
+a=input().split()
+b=1
+for i in range(1,len(a)):
+    if a[i]!=a[i-1]:
+        b+=1
+print(b)
+
+#task 9
+a = [int(i) for i in input().split()]
+for i in range(1, len(a), 2):
+    a[i - 1], a[i] = a[i], a[i - 1]
+print(' '.join([str(i) for i in a]))
+
+#task 10
+n=[int(i) for i in input().split()]
+max=n.index(max(n))
+min=n.index(min(n))
+n[max],n[min] = n[min],n[max]
+print(' '.join(str(i) for i in n))
+
+#task 11
+l = input().split()
+k = int(input())
+del l[k]
+print(*l)
+
+#task 12
+a=[int(i) for i in input().split()]
+t=a+[0]
+b=[int(i) for i in input().split()]
+k=b[0]
+c=b[1]
+for i in range (0, len(t)):
+    if i==k:
+        t[i:]=[c]+t[i:len(t)]
+t.pop()
+print(' ' .join(str(i) for i in t))
+
+#task 13
+a = [int(s) for s in input().split()]
+counter = 0
+for i in range(len(a)):
+    for j in range(i + 1, len(a)):
+        if a[i] == a[j]:
+            counter += 1
+print(counter)
+
+#task 14
+a = [int(i) for i in input().split()]
+for i in range(len(a)):
+    s = a.count(a[i])
+    if s == 1:
+        print(a[i])
+
+#task 15
+n, k = [int(s) for s in input().split()]
+bahn = ['I'] * n
+for i in range(k):
+    left, right = [int(s) for s in input().split()]
+    for j in range(left - 1, right):
+        bahn[j] = '.'
+print(''.join(bahn))
+
+#task 16
+n = 8
+x = []
+y = []
+for i in range(n):
+    new_x, new_y = [int(s) for s in input().split()]
+    x.append(new_x)
+    y.append(new_y)
+
+correct = True
+for i in range(n):
+    for j in range(i + 1, n):
+        if x[i] == x[j] or y[i] == y[j] or abs(x[i] - x[j]) == abs(y[i] - y[j]):
+            correct = False
+
+if correct:
+    print('NO')
+else:
+    print('YES')
