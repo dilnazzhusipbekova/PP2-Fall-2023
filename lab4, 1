@@ -1,0 +1,81 @@
+#task 1
+print(len(set(input().split())))
+
+#task 2
+print(len(set(input().split()) & set(input().split())))
+
+#task 3
+print(*sorted(set(input().split()) & set(input().split()), key=int))
+
+#task 4
+numbers = [int(s) for s in input().split()]
+occur_before = set()
+for num in numbers:
+    if num in occur_before:
+        print('YES')
+    else:
+        print('NO')
+        occur_before.add(num)
+
+#task 5
+m, n = ([int(i) for i in input().split()])
+a, b=set(), set()
+for i in range(m):
+    a.add(int(input()))
+for i in range(n):
+    b.add(int(input()))
+print(len(a.intersection(b)))
+print(*sorted(a.intersection(b)))
+print(len(a.difference(b)))
+print(*sorted(a.difference(b)))
+print(len(b.difference(a)))
+print(*sorted(b.difference(a)))
+
+#task 6
+words = set()
+for _ in range(int(input())):
+    words.update(input().split())
+print(len(words))
+
+#task 7
+n = int(input())
+sett = {str(i) for i in range(n+1)} - {'0'}
+s = input()
+while s[0] != 'H':
+    p = input()
+    if p == 'NO':
+        sett = sett - {i for i in s.split()}
+    else:
+        sett = sett & {i for i in s.split()}
+    s = input()
+print(*sorted(sett))
+
+#task 8
+A = {i+1 for i in range(int(input()))}
+while True:
+    question = input()
+    if question == 'HELP': break
+    B = {int(i) for i in question.split()}
+    if len(A - B) >= len(A & B):
+        print('NO')
+        A -= B
+    else:
+        print('YES')
+        A &= B
+print(*sorted(A))
+
+#task 9
+s = [{input() for j in range(int(input()))} for i in range(int(input()))]
+a, b = set.intersection(*s), set.union(*s)
+print(len(a), *sorted(a), sep='\n')
+print(len(b), *sorted(b), sep='\n')
+
+#task 10
+N, K = [int(s) for s in input().split()]
+work_d = set([day for day in range(1, N + 1) if day % 7 not in (6, 0)])
+no_s = set(work_d)
+for party in range(K):
+    a, b = [int(s) for s in input().split()]
+    max_strikes = (N - a) // b + 1
+    no_s -= { a + b*i for i in range(max_strikes)}
+print(len(work_d) - len(no_s))
