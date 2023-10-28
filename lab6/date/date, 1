@@ -1,0 +1,6 @@
+from datetime import datetime, timedelta
+current_d = datetime.now()
+new_d = current_d - timedelta(days=5)
+new_d_str = new_d.strftime("%Y-%m-%d")
+print("Current Date:", current_d)
+print("Date 5 days ago (formatted):", new_d_str)
