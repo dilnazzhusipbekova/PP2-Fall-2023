@@ -1,0 +1,6 @@
+n = int(input())
+k = n - 1
+p = n + 1
+print("The next number for the number " + str(n) + " is "
++  str(p) )
+print("The previous number for the number " + str(n) + " is " + str(k))
